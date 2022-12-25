@@ -1,13 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './samples/node-api'
-import 'styles/index.css'
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
+import React from "react";
+import { render } from "react-dom";
+import App from "./App";
+import "./samples/node-api";
+import "styles/index.css";
+import fs from "fs";
+console.log("fs.existsSync:" + fs.existsSync("foo.txt"));
+render(
   <React.StrictMode>
+    {/* <I18nProvider i18n={i18n}> */}
     <App />
-  </React.StrictMode>
-)
+    {/* </I18nProvider> */}
+  </React.StrictMode>,
+  document.getElementById("root") as HTMLElement
+);
 
-postMessage({ payload: 'removeLoading' }, '*')
+postMessage({ payload: "removeLoading" }, "*");
