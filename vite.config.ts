@@ -20,7 +20,7 @@ export default defineConfig({
   plugins: [
     react(),
     electron({
-      include: ["electron", "preload"],
+      include: ["electron"],
       transformOptions: {
         sourcemap: !!process.env.VSCODE_DEBUG,
       },

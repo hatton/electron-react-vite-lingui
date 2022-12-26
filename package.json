@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An Electron application with React and TypeScript",
   "author": "example.com",
-  "main": "dist-electron/electron/main/index.js",
+  "main": "dist-electron/main/index.js",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
@@ -70,7 +70,7 @@
     "sass": "^1.56.2",
     "typescript": "^4.9.3",
     "vite": "^4.0.3",
-    "vite-electron-plugin": "^0.5.2",
+    "vite-electron-plugin": "^0.6.2",
     "vite-plugin-electron-renderer": "^0.11.3",
     "vitest": "^0.26.2"
   },
