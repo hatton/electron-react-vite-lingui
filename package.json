@@ -13,12 +13,12 @@
     "build:win": "npm run build && electron-builder --win --config",
     "build:mac": "npm run build && electron-builder --mac --config",
     "build:linux": "npm run build && electron-builder --linux --config",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "test": "vitest run",
     "testui": "vitest --ui",
     "lingui-extract": "lingui extract",
-    "lingui-compile": "lingui compile"
+    "lingui-compile": "lingui compile",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@electron-toolkit/preload": "^1.0.2",
@@ -63,7 +63,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-storybook": "^0.6.8",
     "prettier": "^2.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
