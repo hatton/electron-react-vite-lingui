@@ -1,0 +1,1 @@
+/*eslint-disable*/export const messages={"not translated":"not translated","one":"uno","two":"dos"};
