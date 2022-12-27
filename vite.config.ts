@@ -18,9 +18,14 @@ export default defineConfig({
     },
   },
   plugins: [
-    react(),
+    react({
+      // I don't know why, but css props work without this
+      // babel: {
+      //   plugins: ["@emotion/babel-plugin"],
+      // },
+    }),
     electron({
-      include: ["electron"],
+      include: ["src/main", "src/preload"],
       transformOptions: {
         sourcemap: !!process.env.VSCODE_DEBUG,
       },

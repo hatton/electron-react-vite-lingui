@@ -1,10 +1,7 @@
 //import icons from "./assets/icons.svg";
 import { css } from "@emotion/react";
 import { Button } from "@material-ui/core";
-import { default as React, useState, useEffect } from "react";
-
-// a codemod that adds an id attribute to all <Trans> elements
-
+import { default as React } from "react";
 import { i18n } from "@lingui/core";
 import { Trans } from "@lingui/react";
 
@@ -14,17 +11,22 @@ export const App: React.FunctionComponent = () => {
     <div className="container">
       <h2 className="hero-text">This should be made red by scss.</h2>
       <h2
-        css={{
-          color: "green",
-        }}
-        //css={{ color: "green !important"}}
+        css={css`
+          color: green;
+        `}
+        //css={{ color: "green !important" }}
       >
-        This should be made green by emotion.
+        This should be green by emotion css prop
+      </h2>
+
+      <h2
+        css={{
+          color: "blue",
+        }}
+      >
+        This should be blue from emotion with object
       </h2>
       <Button variant="outlined">Material is here</Button>
-      <p className="hero-tagline">
-        Please try pressing <code>F12</code> to open the devTool
-      </p>
       <h2>
         Lingui test:
         <br />
