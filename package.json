@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "dev": "vite",
     "build": "tsc && vite build",
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "yarn patch-package && electron-builder install-app-deps",
     "build:win": "npm run build && electron-builder --win --config",
     "build:mac": "npm run build && electron-builder --mac --config",
     "build:linux": "npm run build && electron-builder --linux --config",
