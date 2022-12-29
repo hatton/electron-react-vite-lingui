@@ -4,7 +4,7 @@ import { Button } from "@material-ui/core";
 import { default as React } from "react";
 import { i18n } from "@lingui/core";
 import { Trans } from "@lingui/react";
-//import { FFMpegTest } from "./FFMpegTest";
+import { FFMpegTest } from "./FFMpegTest";
 
 // export a react function component named App
 export const App: React.FunctionComponent = () => {
@@ -15,7 +15,6 @@ export const App: React.FunctionComponent = () => {
         css={css`
           color: green;
         `}
-        //css={{ color: "green !important" }}
       >
         This should be green by emotion css prop
       </h2>
@@ -36,7 +35,7 @@ export const App: React.FunctionComponent = () => {
         <br />
         <Trans id="not translated" />
       </h2>
-      {/* <FFMpegTest /> */}
+      <FFMpegTest />
     </div>
   );
 };

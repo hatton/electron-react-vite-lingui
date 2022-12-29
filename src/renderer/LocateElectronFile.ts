@@ -1,7 +1,6 @@
-import * as remote from "@electron/remote";
 import * as Path from "path";
 import * as fs from "fs"; //"fs-extra";
-import { appPath } from "./main";
+import { appPath } from "./globals";
 
 // Find a file or directory that is part of the distribution.
 // The path will vary when we're running from source vs in an asar-packaged mac app.

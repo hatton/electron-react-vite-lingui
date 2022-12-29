@@ -7,12 +7,8 @@ import { messages as enMessages } from "../../locales/en/messages";
 import { messages as esMessages } from "../../locales/es/messages";
 
 import fs from "fs";
-import { ipcRenderer } from "electron";
-console.log("fs.existsSync:" + fs.existsSync("foo.txt"));
-//console.log(`even names: ${ipcRenderer.eventNames}`);
-export const appPath = await ipcRenderer.invoke("getAppPath");
 
-console.log(`appPath: ${appPath}`);
+console.log("fs.existsSync:" + fs.existsSync("foo.txt"));
 
 i18n.load({
   en: enMessages,
