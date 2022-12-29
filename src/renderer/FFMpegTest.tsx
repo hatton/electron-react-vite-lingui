@@ -8,7 +8,13 @@ const ffmpegPath = require("ffmpeg-static").replace(
 );
 
 ffmpeg.setFfmpegPath(ffmpegPath);
-
+const x = require("ffprobe-static").path;
+console.log(`ffprobe-static.path=${x}`);
+const ffprobePath = require("ffprobe-static")
+  .path // during run from release (win-unpacked or installed)
+  .replace("app.asar", ""); // on windows, both installed and not installed, win-unpacked/resources/node_modules/ffprobe-static exists
+console.log(`adjusted ffprobe-static.path=${ffprobePath}`);
+ffmpeg.setFfprobePath(ffprobePath);
 export const FFMpegTest: React.FunctionComponent = () => {
   const [length, setLength] = React.useState<string>("");
   React.useEffect(() => {

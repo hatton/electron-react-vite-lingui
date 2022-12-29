@@ -2,40 +2,69 @@
  * @see https://www.electron.build/configuration/configuration
  */
 {
-  appId: "YourAppID",
-  productName: "YourAppName",
-  copyright: "Copyright © 2022 ${author}",
-  asar: true,
-  directories: {
-    output: "release/${version}",
-    buildResources: "electron/resources",
-  },
-  files: [
-    "dist-electron",
-    "dist"
-  ],
-  win: {
-    target: [
+  productName: "vite-electron-test",
+  appId: "com.github.onset.test",
+  asarUnpack: ["node_modules/ffprobe-static/*"],
+  afterSign: "electron-builder-notarize",
+  dmg: {
+    contents: [
       {
-        target: "nsis",
-        arch: ["x64"],
+        x: 410,
+        y: 150,
+        type: "link",
+        path: "/Applications",
+      },
+      {
+        x: 130,
+        y: 150,
+        type: "file",
       },
     ],
-    artifactName: "${productName}-Windows-${version}-Setup.${ext}",
+  },
+  files: ["index.html", "package.json", "dist/", "dist-electron/"],
+  extraResources: ["artwork/"],
+  extraFiles: ["sample data/", "assets/"],
+  directories: {
+    buildResources: "resources",
+    output: "release",
+  },
+  win: {
+    target: "nsis",
+    icon: "build/windows.ico",
+    extraResources: ["node_modules/ffprobe-static/bin/win32/x64"],
+    fileAssociations: [
+      {
+        ext: "sprj",
+        name: "lameta/saymore project",
+      },
+    ],
   },
   nsis: {
-    oneClick: false,
-    perMachine: false,
-    allowToChangeInstallationDirectory: true,
-    deleteAppDataOnUninstall: false,
+    artifactName: "${productName} Windows Setup ${version}.${ext}",
   },
   mac: {
-    target: ["dmg"],
-    artifactName: "${productName}-Mac-${version}-Installer.${ext}",
+    icon: "build/mac.icns",
+    hardenedRuntime: true,
+    artifactName: "${productName} Mac ${version}.${ext}",
+    extraResources: ["node_modules/ffprobe-static/bin/darwin/x64"],
+    fileAssociations: [
+      {
+        ext: "sprj",
+        name: "lameta/saymore project",
+        role: "Editor",
+      },
+    ],
   },
   linux: {
-    icon: "electron/resources/iconset",
-    target: ["AppImage", "deb"],
-    artifactName: "${productName}-Linux-${version}.${ext}",
+    target: ["deb", "AppImage"],
+    extraResources: ["node_modules/ffprobe-static/bin/linux/x64"],
+    category: "science",
+    description: "A metadata tool to help with organising collections of files. It is mainly aimed at collections made in the course of documenting language, music, and other cultural expressions.",
+    fileAssociations: [
+      {
+        ext: "sprj",
+        name: "lameta/saymore project",
+      },
+    ],
   },
 }
