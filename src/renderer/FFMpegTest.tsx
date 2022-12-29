@@ -6,7 +6,6 @@ const ffmpegPath = require("ffmpeg-static").replace(
   "app.asar",
   "app.asar.unpacked"
 );
-// console.log(`ffmpegPath: ${ffmpegPath}`);
 
 ffmpeg.setFfmpegPath(ffmpegPath);
 
