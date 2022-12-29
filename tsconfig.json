@@ -2,6 +2,7 @@
   "include": [
     "electron",
     "src",
+    "locales",
     "package.json",
   ],
   "compilerOptions": {
